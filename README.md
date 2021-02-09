@@ -24,7 +24,7 @@ In a terminal also login to wandb by runing wandb login. You'll have to setup an
 
 ## Part I
 
-* 1 - [Matrix Factorization](https://github.com/azamatolegen/pytorch-recommendation_systems/blob/main/Part%20I/Matrix_Factorization_Model_in_PyTorch.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1DnQjPm60UYM2HdhtqLfLHH_1IyprCfpV#scrollTo=FlcZ96-kuYyX)
+* 1 - [Matrix Factorization](https://github.com/azamatolegen/pytorch-recommendation_systems/blob/main/Part%20I/Matrix_Factorization_(MF).ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1DnQjPm60UYM2HdhtqLfLHH_1IyprCfpV#scrollTo=FlcZ96-kuYyX)
 
     This notebook covers the workflow of a Matrix Factorization model in PyTorch. 
     Matrix Factorization is a class of the collaborative filtering algorithm. 
@@ -38,7 +38,7 @@ In a terminal also login to wandb by runing wandb login. You'll have to setup an
     The factorization process has to learn all these from existing interactions. 
     Hence, factorization machines are introduced as an improved version of MF.
 
-* 3 - [Deep Factorization Machines](https://github.com/azamatolegen/pytorch-recommendation_systems/blob/main/Part%20I/Deep_Factorization_Machines.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1h2bl3xNda8yarVGJwUo_kcV9euF3EUYT#scrollTo=x-MKRhCyaxNU)
+* 3 - [Deep Factorization Machines](https://github.com/azamatolegen/pytorch-recommendation_systems/blob/main/Part%20I/Deep_Factorization_Machines_(DeepFM).ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1h2bl3xNda8yarVGJwUo_kcV9euF3EUYT#scrollTo=x-MKRhCyaxNU)
 
     For real-world data where inherent feature crossing structures are usually very complex and nonlinear, second-order feature interactions generally used in factorization machines in practice are often insufficient. Modeling higher degrees of feature combinations with factorization machines is possible theoretically but it is usually not adopted due to numerical instability and high computational complexity. One effective solution is using deep neural networks.    
 ## Part II 
