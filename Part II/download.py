@@ -3,6 +3,8 @@ import numpy as np
 import pandas as pd
 import requests
 from zipfile import ZipFile
+from sklearn.preprocessing import LabelEncoder
+import joblib
 
 # Download, unzip and read in the dataset
 name = 'data/ml-1m.zip'
@@ -50,6 +52,25 @@ df = rat.merge(users, on='user')
 df = df.merge(movies, left_on='item', right_on='id')
 df = df.sample(frac=1)
 assert len(rat) == len(df)
+
+user_lbl = LabelEncoder()
+item_lbl = LabelEncoder()
+
+df.user = user_lbl.fit_transform(df.user.values)
+df.item = item_lbl.fit_transform(df.item.values)
+
+user_mapping = dict(zip(user_lbl.classes_, range(len(user_lbl.classes_))))
+item_mapping = dict(zip(item_lbl.classes_, range(len(item_lbl.classes_))))
+movies_mapping = dict(zip(movies.title.values, movies.id.values))
+inv_movies_mapping = {v: k for k, v in movies_mapping.items()}
+inv_item_mapping = {v: k for k, v in item_mapping.items()}
+
+# save dictionaries for later use
+joblib.dump(user_mapping, "./data/dict_data/user_mapping.pkl.zip")
+joblib.dump(item_mapping, "./data/dict_data/item_mapping.pkl.zip")
+joblib.dump(movies_mapping, "./data/dict_data/movies_mapping.pkl.zip")
+joblib.dump(inv_movies_mapping, "./data/dict_data/inv_movies_mapping.pkl.zip")
+joblib.dump(inv_item_mapping, "./data/dict_data/inv_item_mapping.pkl.zip")
 
 # Compute cardinalities
 n_features = df.user.max() + 1 + df.item.max() + 1

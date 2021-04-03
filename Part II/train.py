@@ -41,7 +41,7 @@ c_bias = 1e-6  # New parameter for regularizing bias
 c_vector = 1e-6  # Regularization constant
 
 # Setup logging
-log_dir = 'runs/mf_bias_' + str(datetime.now()).replace(' ', '_')
+log_dir = 'runs/'
 writer = SummaryWriter(log_dir=log_dir)
 
 # Instantiate the model class object
