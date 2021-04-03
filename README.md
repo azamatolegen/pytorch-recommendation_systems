@@ -1,10 +1,10 @@
 # PyTorch Recommendation Systems
 
-This repo contains notebooks covering how to do recommendation using [PyTorch](https://github.com/pytorch/pytorch).
+This repo contains a series of notebooks covering deep learning-based recommendation models.
 
-The first part will cover different approaches of recommendation models: . 
+The first part will cover different approaches of recommendation models using PyTorch on Jupyter/Google Colab notebooks.
 
-The second part covers the serving of the best performed model.
+The second part covers the serving of the best performed model using Fast API, Docker and Heroku.
 
 
 ## Part I
@@ -30,7 +30,7 @@ The second part covers the serving of the best performed model.
 
 ### Scripts
 
-    loader.py: This is the script that loads the data.
-    MFBiases.py: This is the model script that defines the Matrix Factorization model with biases.
-    train.py: This is the main training script. You can simply run python train.py to execute it.
+* loader.py: This is the script that loads the data.
+* model.py: This is the model script that defines the Matrix Factorization model with biases.
+* train.py: This is the main training script. You can simply run python train.py to execute it.
 
