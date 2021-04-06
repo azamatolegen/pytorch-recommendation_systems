@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/styles.css') }}"  type="text/css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Find movies like those you liked</title>
+  </head>
+
+  <body class="text-center">
+    <header >
+        <nav class="navbar navbar-expand-md">
+            <a class="navbar-brand" href="/">
+                Movie Recommendation App
+            </a>
+        </nav>
+    </header>
+
+    {% block content %}
+        <div class="container-fluid container-main">
+            <div class="row align-items-center justify-content-center ">
+                <div class = "col-lg-4 mx-auto col-xs-12 col-sm-10">
+                    <form action='{{ url_for("results") }}' method="GET" autocomplete="off">
+                        <div class="form-group"> 
+                            <input autocomplete="false" type="text" style="display:none;">
+                                {{ form.movie_autocomplete(placeholder="Start typing name of the movie you liked...", class="form-control form-rounded") }}
+                            </div>
+                        <div>
+                            <button type="submit" class="btn btn btn-pill btn-dark">Find movies!</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row align-items-center justify-content-center ">
+                <div class = "col-lg-4 mx-auto col-xs-12 col-sm-10">
+                    <br/>
+                    <p class="text-center message">
+                        It is a nice cozy evening, why not enjoy some great movie?
+                    </p>
+                    <p class="text-center message">
+                        No sign up, no hassle. Just get a recommendation based on a movie you liked.
+                    </p>
+                </div>
+            </div>
+         </div>
+    {% endblock %}
+
+
+    <footer class="footer">
+        <nav class="navbar navbar-expand-md">
+              <div>
+                    <div class="navbar-nav mr-auto ">
+                            <a class="nav-item nav-link" href="https://github.com/azamatolegen/pytorch-recommendation_systems">GitHub</a>
+                            <a class="nav-item nav-link" href="http://linkedin.com/in/azamat-tolegen-763969bb/">By Azamat Tolegen</a>
+                </div>
+              </div>
+        </nav>
+    </footer>
+
+<!-- Javascript to have autocomplete feature--> 
+    <script>
+        $(function() {
+            $.ajax({
+                url: '{{ url_for("autocomplete") }}'
+                }).done(function (data){
+                    $('#movie_autocomplete').autocomplete({
+                        source: function(request, response) {
+                            var maxResults = 7
+                            var results = $.ui.autocomplete.filter(data, request.term);
+                            response(results.slice(0, maxResults));
+                        },
+                        minLength:2
+                    }).keypress(function(e) {
+    if (e.keyCode === 13) {
+        $(this).closest('form').trigger('submit');
+    }
+});
+                });
+            });
+    </script>
+  </body>
+</html>

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/styles.css') }}"  type="text/css">
+    <link rel="stylesheet" href="static/styles.css"  type="text/css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -21,14 +21,12 @@
         </nav>
     </header>
 
-    {% block content %}
         <div class="container-fluid container-main">
             <div class="row align-items-center justify-content-center ">
                 <div class = "col-lg-4 mx-auto col-xs-12 col-sm-10">
-                    <form action='{{ url_for("results") }}' method="GET" autocomplete="off">
+                    <form action= '/main' method="GET" autocomplete="off">
                         <div class="form-group">
-                            <input autocomplete="false" type="text" style="display:none;">
-                                {{ request(placeholder="Toy Story (1995)", class="form-control form-rounded") }}
+                            <input autocomplete="false" type="text" name='text' >
                             </div>
                         <div>
                             <button type="submit" class="btn btn btn-pill btn-dark">Find movies!</button>
@@ -36,6 +34,7 @@
                     </form>
                 </div>
             </div>
+            {{results}}            
             <div class="row align-items-center justify-content-center ">
                 <div class = "col-lg-4 mx-auto col-xs-12 col-sm-10">
                     <br/>
@@ -48,8 +47,6 @@
                 </div>
             </div>
          </div>
-    {% endblock %}
-
 
     <footer class="footer">
         <nav class="navbar navbar-expand-md">
@@ -63,3 +60,20 @@
     </footer>
   </body>
 </html>
+
++
+
+
+from flask import Flask, render_template, request
+app = Flask(__name__)
+
+@app.route("/main")
+def main():
+    t = request.args.get('text')
+    # r=[]
+    # if t:
+    r = to_recommend(t)
+    return render_template('main.html', text=t, results=r)
+
+if __name__ == '__main__':
+    app.run(debug=True)

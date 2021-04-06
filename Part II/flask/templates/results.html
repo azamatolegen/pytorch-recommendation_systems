@@ -7,7 +7,7 @@
                 <form action='{{ url_for("results") }}' method="GET" autocomplete="off">
                     <div class="form-group"> 
                         <input autocomplete="false" type="text" style="display:none;">
-                            {{ request(placeholder="Toy Story (1995)", class="form-control form-rounded") }}
+                            {{ form.movie_autocomplete(placeholder="Start typing name of the movie you liked...", class="form-control form-rounded") }}
                         </div>
                     <div>
                         <button type="submit" class="btn btn btn-pill btn-dark">Find movies!</button>

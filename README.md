@@ -28,9 +28,20 @@ The second part covers the serving of the best performed model using Fast API, D
     For real-world data where inherent feature crossing structures are usually very complex and nonlinear, second-order feature interactions generally used in factorization machines in practice are often insufficient. Modeling higher degrees of feature combinations with factorization machines is possible theoretically but it is usually not adopted due to numerical instability and high computational complexity. One effective solution is using deep neural networks.    
 ## Part II 
 
-### Scripts
+The structure of the Part II is the following:
 
-* loader.py: This is the script that loads the data.
-* model.py: This is the model script that defines the Matrix Factorization model with biases.
-* train.py: This is the main training script. You can simply run python train.py to execute it.
-
+data/               # dataset and dictionaries stored here
+docker/             # docker image
+flask/              # everything we need for flask api
+    static/
+    templates/
+    api.py
+    dockerfile
+models/             # stores our trained models
+runs/               # runs and logs
+download.py         # is the script that downloads and pre-processes the data
+loader.py           # is the script that loads the data into the model
+model.py            # is the model script that defines the Matrix Factorization model with biases
+train.py            # is the main training script. You can simply run python train.py to execute it
+reqiurements.txt
+README.md
