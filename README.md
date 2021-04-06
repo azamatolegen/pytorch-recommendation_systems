@@ -29,19 +29,20 @@ The second part covers the serving of the best performed model using Fast API, D
 ## Part II 
 
 The structure of the Part II is the following:
-
-data/               # dataset and dictionaries stored here
-docker/             # docker image
-flask/              # everything we need for flask api
-    static/
-    templates/
-    api.py
-    dockerfile
-models/             # stores our trained models
-runs/               # runs and logs
-download.py         # is the script that downloads and pre-processes the data
-loader.py           # is the script that loads the data into the model
-model.py            # is the model script that defines the Matrix Factorization model with biases
-train.py            # is the main training script. You can simply run python train.py to execute it
-reqiurements.txt
-README.md
+```
+    data/               # dataset and dictionaries stored here
+    docker/             # docker image
+    flask/              # everything we need for flask api
+        static/
+        templates/
+        api.py
+        dockerfile
+    models/             # stores our trained models
+    runs/               # runs and logs
+    download.py         # is the script that downloads and pre-processes the data
+    loader.py           # is the script that loads the data into the model
+    model.py            # is the model script that defines the Matrix Factorization model with biases
+    train.py            # is the main training script. You can simply run python train.py to execute it
+    reqiurements.txt
+    README.md
+```
