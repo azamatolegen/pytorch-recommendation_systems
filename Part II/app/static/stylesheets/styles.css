@@ -1,0 +1,80 @@
+html, body.text-center{
+    background-color:#4a77d4;
+}
+
+header, footer {
+	background-color: #4a77d4;
+}
+
+
+li.list-group-item {
+		background: #869cb9;
+}
+
+.message {
+	color: white; 
+}
+
+.navbar-brand {
+	color: white;
+	font-weight: bold;
+}
+
+.navbar-nav, .nav-item, .nav-link {
+	color: white;
+}
+
+a.results_element {
+	color: #4a77d4;
+}
+
+div.container-main {
+	position: absolute;
+	top: 30%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+  }
+  
+footer.footer {
+	flex: 0 0 20px;/*or just height:50px;*/
+	margin-top: auto;
+  }
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus {
+	border: 1px solid #999999;
+	background: #b69999!important;
+	font-weight: normal;
+	color: white;
+}
+
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+	border: 1px solid #aaaaaa;
+	background: #b69999!important;
+	font-weight: normal;
+	color: white;
+}
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited {
+	color: #74828f;
+	text-decoration: none;
+}
+
+.ui-menu-item {
+	background: #869cb9!important;
+}
+
+ 
+ 
