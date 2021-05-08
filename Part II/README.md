@@ -1,6 +1,3 @@
-
-
-# movies_recommendation
 A web app that recommends movies similar to those a user provides as an input.
 
 ## Data

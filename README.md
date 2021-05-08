@@ -28,11 +28,15 @@ The second part covers the serving of the best performed model using Fast API, D
     For real-world data where inherent feature crossing structures are usually very complex and nonlinear, second-order feature interactions generally used in factorization machines in practice are often insufficient. Modeling higher degrees of feature combinations with factorization machines is possible theoretically but it is usually not adopted due to numerical instability and high computational complexity. One effective solution is using deep neural networks.    
 ## Part II 
 
-The app is hosted at https://recsys-part2.herokuapp.com/
+The app is hosted at https://recsys-part2.herokuapp.com/ (may take few minutes to open)
+
 Instructions:
 
 1. Simply start typing name of the movie you liked in the search bar, and as you type suggestions of movie names that are available will appear in the drop-down
 
-2. Select the movie you want from the drop down and press the "Find Movies!" button or hit "Enter" on your keyboard.
+2. Select the movie you want from the list and press the "Find Movies!" button or hit "Enter" on your keyboard.
 
 3. The resulting 10 most similar movies will appear. You can click on any movie title to open up a new tab with google search query for that title.
+
+For more details go to 
+[PART II](https://github.com/azamatolegen/pytorch-recommendation_systems/tree/main/Part%20II)

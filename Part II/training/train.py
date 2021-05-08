@@ -26,6 +26,7 @@ fh = np.load(path + 'dataset.npz')
 train_x = fh['train_x'].astype(np.int64)
 train_y = fh['train_y']
 
+
 # We've already split the data into train & test set
 test_x = fh['test_x'].astype(np.int64)
 test_y = fh['test_y']
